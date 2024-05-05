@@ -2,7 +2,7 @@
 FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-devel
 
 # 添加NVIDIA GPG公钥
-RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+RUN apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 
 # 安装系统依赖
 RUN apt-get update && apt-get install -y \
