@@ -2,19 +2,8 @@
 # 基础镜像
 FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-devel
 
-# 安装系统依赖
-RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
-    libpci-dev \
-    curl \
-    nano \
-    psmisc \
-    zip \
-    git \
-    apt-get --fix-broken install -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
+#安装系统依赖
+RUN apt-get update && apt-get install -y libgl1-mesa-glx libpci-dev curl nano psmisc zip git && apt-get --fix-broken install -y
 
 # 安装Conda包
 RUN conda install -y \
@@ -28,7 +17,6 @@ RUN conda install -y \
     future \
     libgcc \
     -c conda-forge
-
 
 # 安装Python库
 RUN pip install --upgrade pip && \
