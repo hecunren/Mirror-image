@@ -1,6 +1,9 @@
 # 基础镜像
 FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-devel
 
+# 添加NVIDIA GPG公钥
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+
 # 安装系统依赖
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
@@ -67,4 +70,3 @@ RUN pip install --upgrade pip && \
 
 # 复制字体文件
 COPY ./fonts/* /opt/conda/lib/python3.10/site-packages/matplotlib/mpl-data/fonts/ttf/
-
