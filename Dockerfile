@@ -3,7 +3,7 @@
 FROM pytorch/pytorch:1.6.0-cuda10.1-cudnn7-devel
 
 
-RUN apt-key adv --keyserver.ubuntu.com --recv-keys A4B469963BF863CC
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A4B469963BF863CC
 
 #安装系统依赖
 RUN apt-get update && apt-get install -y libgl1-mesa-glx libpci-dev curl nano psmisc zip git && apt-get --fix-broken install -y
