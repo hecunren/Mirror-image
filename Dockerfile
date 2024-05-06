@@ -1,6 +1,7 @@
 
 # 基础镜像
-FROM pytorch/pytorch:1.4-cuda10.1-cudnn7-devel
+FROM pytorch/pytorch:1.6.0-cuda10.1-cudnn7-devel
+
 
 RUN apt-key adv --keyserver.ubuntu.com --recv-keys A4B469963BF863CC
 
@@ -24,8 +25,6 @@ RUN conda install -y \
 RUN pip install --upgrade pip && \
     pip install --upgrade setuptools && \
     pip install \
-    torch==1.4.0 \
-    torchvision==0.5.0 \
     numpy=1.16.1 \
     matplotlib \
     svgwrite \
